@@ -10,3 +10,4 @@ Pacman recorre el laberinto comiendo los puntos mientras los fantasmas lo persig
 
 ## Cambios realizados
 - Se cambio el diseño del tablero abriendo algunas paredes (Edgar).
+- Se aumentó la velocidad de los fantasmas de 5 a 10 (Edgar).

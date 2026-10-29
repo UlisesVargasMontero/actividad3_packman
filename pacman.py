@@ -19,11 +19,13 @@ path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
+
+# Los fantasmas avanzan en 10 en vez de 5 para ir mas rapido.
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -160), vector(-5, 0)],
+    [vector(-180, 160), vector(10, 0)],
+    [vector(-180, -160), vector(0, 10)],
+    [vector(100, 160), vector(0, -10)],
+    [vector(100, -160), vector(-10, 0)],
 ]
 # Tablero del juego modificado: 1 pasillo con el punto y 0 es la pared.
 # Se cambiaron  algunas paredes por pasillos para el laberinto:
@@ -139,11 +141,12 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
+            # Al cambiar de direccion tambien avanzaran en 10 en vez de 5.
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(10, 0),
+                vector(-10, 0),
+                vector(0, 10),
+                vector(0, -10),
             ]
             plan = choice(options)
             course.x = plan.x
