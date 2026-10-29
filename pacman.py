@@ -148,16 +148,18 @@ def move():
                 vector(0, 10),
                 vector(0, -10),
             ]
-            
+
             # Filtrar solo las opciones que son físicamente válidas
             valid_options = [opt for opt in options if valid(point + opt)]
-            
+
             if valid_options:
                 # Elegir la opción que deje al fantasma más cerca de Pacman
-                plan = min(valid_options, key=lambda opt: abs(pacman - (point + opt)))
+                plan = min(
+                    valid_options,
+                    key=lambda opt: abs(pacman - (point + opt)))
             else:
                 plan = choice(options)
-                
+
             course.x = plan.x
             course.y = plan.y
 
